@@ -1,2 +1,6 @@
 .mendix-cache
 .svn
+.classpath
+.project
+deployment
+Slide_In_Slide_Out_widget.launch
