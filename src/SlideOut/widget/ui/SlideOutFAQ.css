@@ -1,0 +1,31 @@
+.slideout-control {
+    position: fixed;
+    top: 130px;
+    -webkit-transform-origin: 100% 50%;
+       -moz-transform-origin: 100% 50%;
+        -ms-transform-origin: 100% 50%;
+         -o-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+    -webkit-transform: rotate(90deg) translate(50%, 50%);
+       -moz-transform: rotate(90deg) translate(50%, 50%);
+        -ms-transform: rotate(90deg) translate(50%, 50%);
+         -o-transform: rotate(90deg) translate(50%, 50%);
+            transform: rotate(90deg) translate(50%, 50%);
+}
+
+.slideout-container {
+    background: #fff;
+    position: fixed;
+    height: 100%;
+    box-shadow: 0 6px 17px 0 rgba(0, 0, 0, 0.2);
+    right: 0;
+	top: 0 !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.slideout-container, .slideout-control{
+	z-index: 10000;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

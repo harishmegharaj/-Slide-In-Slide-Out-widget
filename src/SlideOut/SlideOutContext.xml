@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="SlideOut.widget.SlideOutContext" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+    <name>SlideOut Context</name>
+    <description>The lide out widget only in the place of a dataview.</description>        
+	<icon>iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAFMklEQVR4Xu3dsW8URxTH8TeLpaSDJg0S59xxHWWC0gYlUNCkiURDi/gDEPkHUqL8A6ROiwSJKAISUpoU1HTnW98hKio6kI4dtLbBZ/t2d2ZuZve9Nz+Xvtnx7Xw/vrVvR7YhfGS9Aibrs8fJU9YAptPpV7PZ7IM2Bz7nlS2A6Xh8w65Wfxpjbs6Wy1daEExHoyvW2qdmZ+fOrCz/7TqvLAEcxrePqaCvK7Jvz1l7TQOCOv5HY14UZL6hit6bHfNLF4LsAKzH//zdoQHBifjHJ9aJICsAm+JrQLAxviOCbAC0xZeMoDW+A4IsALjEl4jAKX4HAvUAfOJLQuAVvwWBagAh8SUgCIrfgEAtgG3ic0awVfwNCFQCiBGfI4Io8U8hUAcgZvx6rSqyq3PG/Drb33/c9a5aysejxj96oobsPVUAUsQ3RLfmi8WjlHG75k4Rn8j8trcoH6gBgPhdjNYfP4xff0YFAMQPi68CAOKHxxcPYDwaXy+sfVLf1fNZhqax9Q982q/5p89d7CUA8X3IH1/zVQBA/DjxRV4CED9efHEAED9ufFEAED9+fDEAED9NfBEAED9dfPYAED9tfNYAED99fLYAEL+f+CwBIH5/8dkBQPx+47MCgPj9x2cDAPGHic8CAOIPF39wAJPR5Gdjq79xP98FQfMtXZejm8YMth8A8X2ypYk/2CsA4vOIPwgAxOcTv3cAiM8rfq8AEJ9f/N4AID7P+L0AQHy+8ZMDQHze8ZMCQHz+8ZMBQHwZ8ZMAQHw58aMDQHxZ8aMCQHx58aMBQHyZ8aMAQHy58bcGgPiy428FYDIa/WRs8Q82c7ggSHc/3+Wrt40J2hCC+D7Lzjd+0CsA4uuJ7w0A8XXF9wKA+PriOwNAfJ3xnQAgvt74nQAQX3f8VgCIrz9+IwDEzyP+RgCIn0/8MwAQP6/4JwAgfn7xvwBA/DzjHwBA/HzjHwC4vPvtGyK66LMMbWMrQw/L/f27seYLnMdMdnf/N2R+CDz+zGHWVv/Nl8sficjGmpPDPObyaPQd2eI5FXQh2hOy5u7esnwYbb6Aicbj8a6p7AtDNA44fPMhlflj73V5XxOCg/0AQOBBRBmCLxtCgCBPBCd2BAFBfgjObAkDgrwQbNwTCAT5IGjcFAoEeSBo3RUMBPoRdG4LBwLdCDoB4H0CDwD1UGHvEzgBAAK9CJwBAIFOBF4AgEAfAm8AQKALQRAAINCDIBgAEOhAsBWAegkmlybfG6qeYT+BAwiGvyJuDQAIHMKvD2GGIAoAIJCLIBoAIJCJICoAIJCHIDoAIJCFIAkAIJCDIBkAIJCBICkAIOCPIDkAIOCNoBcAQMAXQW8AgIAngl4BAAE/BL0DAAJeCAYBAAR8EAwGAAh4IBgUwDGC1XMqivOeS9I8HH+fwHkpBwcABM6tDgdG3k/AAgAQDIeADQAgGAYBKwBA0D8CdgCAoF8ELAEAQX8I2AIAgn4QsAYABOkRsAcABGkRiAAABOkQiAEABGkQiAIABPERiAMABHERiAQABPEQiAUABHEQiAZwhOCqodUz7CdwALHhVrJ4AEDgEH59yCkEKgAAQTgCNQCAIAyBKgCpEFiyt+eLxV+eSxx1eJL/gUT2d3UAYiOwRKUtzLWyLBdRiwZMFhVBVb2ztHNdJYBYCDjF/+wlCoKj+PPX85dqAWyLgGP8KAjW4tfzqQYQioBz/K0QnIqfBQBfBBLiByHYED8bAK4IJMX3QtAQPysAXQgkxndC0BI/OwBNCCTHb0XQEb8+9hN4pQ3zPJXjJgAAAABJRU5ErkJggg==</icon>
+
+    <properties>
+        
+        <property key="buttonString" type="translatableString" required="true">
+            <caption>Button text</caption>
+            <category>Appearance</category>
+            <description>The text of the button where placeholders can be used: ${your_Variable_Name}. The attributes for the placeholders are configured in property 'Button attributes'</description>
+        </property>
+        <property key="contentWidth" type="integer" required="true" defaultValue="300">
+            <caption>Width of the content</caption>
+            <category>Appearance</category>
+            <description>How large must the content be in pixels</description>
+        </property>
+		<property key="topPosition" type="integer" required="true" defaultValue="50">
+            <caption>Top position</caption>
+            <category>Appearance</category>
+            <description>What is the minimal amout of pixels from the top?</description>
+        </property>
+		<property key="seqPriority" type="integer" required="true" defaultValue="1">
+            <caption>Priority</caption>
+            <category>Appearance</category>
+            <description>When there are multiple slideout widgets, the order of the buttons must be the same. The widgets will keep this order of the button according of the priority</description>
+        </property>
+		<property key="showTime" type="integer" required="true" defaultValue="500">
+            <caption>Duration</caption>
+            <category>Appearance</category>
+            <description>The duration in milliseconds for the animation to happen.</description>
+        </property>
+        
+		<property key="pageContent" type="form" required="true">
+            <caption>Page</caption>
+            <category>Data</category>
+            <description>The content of that page will be loaded in the widget</description>
+        </property>
+		<property key="attributeList" type="object" isList="true" required="false">
+            <caption>Button attributes</caption>
+            <category>Data</category>
+            <description>The configuration for the placeholders in the 'Button text' linked to attributes of the context object where the widget is placed in.</description>
+            <properties>
+                <property key="variablename" type="string" required="true">
+                    <caption>Variable name</caption>
+                    <category>Data</category>
+                    <description>Identifies the attribute value, this name should be used in 'Display string' property.</description>
+                </property>
+                <property key="attrs" type="attribute" allowNonPersistableEntities="true" isPath="optional" pathType="reference">
+                    <caption>Attribute</caption>
+                    <category>Data</category>
+                    <description>Value of this attribute will be used to replace ${your_Variable_Name}, defined in 'Display string' property</description>
+                    <attributeTypes>
+                        <attributeType name="AutoNumber"/>
+                        <attributeType name="String" />
+                        <attributeType name="Enum"/>
+                        <attributeType name="Integer"/>
+                        <attributeType name="Long"/>
+                    </attributeTypes>
+                </property>
+                <property key="renderHTML" type="boolean" defaultValue="false">
+                    <caption>Render value as HTML</caption>
+                    <category>Behaviour</category>
+                    <description>Escapes string value when set to false</description>
+                </property>
+            </properties>
+        </property>
+		<property key="pushCurrentObject" type="boolean" defaultValue="false">
+			<caption>Push dataview object</caption>
+			<category>Data</category>
+			<description>Must the object of the dataview be given to the page of the widget?</description>
+		</property>
+		<property key="refreshMF" type="microflow" required="false">
+			<caption>Refresh content</caption>
+			<category>Data</category>
+			<description>When the property is filled, the microflow will be triggered when the slide is openend, but not the first time.</description>
+			<returnType type="Void"/>
+		</property>
+		
+    </properties>
+</widget>
+
