@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# Mendix Widget Boilerplate
-
-See [AppStoreWidgetBoilerplate](https://github.com/mendix/AppStoreWidgetBoilerplate/) for an example
-=======
 # Slide-In-Slide-Out-widget
 
 A simple but effective widget to show extra optional information on a page, like notifications of the user or FAQ.You click on the button on the side and a page will slide out showing content you define in the Mendix model.
@@ -46,4 +41,3 @@ A page needs to be made that holds the content. The best option is to use popup 
 #Known bugs
 
 Not known at the moment
->>>>>>> 1f6ceceab4d62129a0b4497e7f76ca24723ef4ce

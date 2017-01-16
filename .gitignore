@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 test/javasource/
 test/deployment/
 test/.classpath
@@ -17,13 +16,4 @@ dist/
 node_modules/
 .editorconfig
 *DS_Store*
-.vscode/
-*.bak
-=======
-.mendix-cache
-.svn
-.classpath
-.project
-deployment
-Slide_In_Slide_Out_widget.launch
->>>>>>> 1f6ceceab4d62129a0b4497e7f76ca24723ef4ce
+
