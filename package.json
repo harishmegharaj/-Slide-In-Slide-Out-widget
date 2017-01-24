@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An Upgrade on the slideout widget",
   "license": "Apache 2",
-  "author": "Conner Charlebois",
+  "author": "J vd Graaf",
   "private": true,
   "dependencies": {
   },
