@@ -17,20 +17,20 @@
 
 // Required module list. Remove unnecessary modules, you can always get them back from the boilerplate.
 define([
-    'dojo/_base/declare', 
-	'mxui/widget/_WidgetBase', 
+    'dojo/_base/declare',
+	'mxui/widget/_WidgetBase',
 	'dijit/_TemplatedMixin',
-    'mxui/dom', 
-	'dojo/dom', 
-	'dojo/query', 
-	'dojo/dom-prop', 
-	'dojo/dom-geometry', 
-	'dojo/dom-class', 
-	'dojo/dom-style', 
-	'dojo/dom-construct', 
-	'dojo/_base/array', 
-	'dojo/_base/lang', 
-	'dojo/html', 
+    'mxui/dom',
+	'dojo/dom',
+	'dojo/query',
+	'dojo/dom-prop',
+	'dojo/dom-geometry',
+	'dojo/dom-class',
+	'dojo/dom-style',
+	'dojo/dom-construct',
+	'dojo/_base/array',
+	'dojo/_base/lang',
+	'dojo/html',
 	'dojo/_base/event',
 	'dojo/text!SlideOut/template/SlideOut.html',
 	'SlideOut/widget/SlideOut'
@@ -60,7 +60,6 @@ define([
         // dijit._WidgetBase.postCreate is called after constructing the widget. Implement to do extra setup work.
         postCreate: function () {
             logger.debug(this.id + ".postCreate");
-
             this._updateRendering();
             this._setupEvents();
         },
@@ -100,14 +99,14 @@ define([
         // Rerender the interface.
         _updateRendering: function (callback) {
             logger.debug(this.id + "._updateRendering");
-            
-            this.slidebutton.innerHTML = this.buttonString;
+
+            this.slidetext.innerHTML = this.buttonString;
 			this._setButtonTop();
-			
+
             // The callback, coming from update, needs to be executed, to let the page know it finished rendering
             mendix.lang.nullExec(callback);
         },
-		
+
 		_loadPage: function(){
             logger.debug(this.id + "._loadPage");
 			if(!this.contentSet) {
@@ -115,7 +114,7 @@ define([
 				this.contentSet = true;
 			}
 		},
-        
+
         _unsubscribe: function () {
           if (this._handles) {
               dojoArray.forEach(this._handles, function (handle) {
@@ -127,7 +126,7 @@ define([
 
         // Reset subscriptions.
         _resetSubscriptions: function () {},
-        
+
         // Handle validations.
         _handleValidation: function (validations) {},
 

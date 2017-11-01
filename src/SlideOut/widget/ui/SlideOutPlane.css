@@ -6,13 +6,13 @@
         -ms-transform-origin: 100% 50%;
          -o-transform-origin: 100% 50%;
             transform-origin: 100% 50%;
-    -webkit-transform: rotate(90deg) translate(50%, 50%);
-       -moz-transform: rotate(90deg) translate(50%, 50%);
-        -ms-transform: rotate(90deg) translate(50%, 50%);
-         -o-transform: rotate(90deg) translate(50%, 50%);
-            transform: rotate(90deg) translate(50%, 50%);
 }
 
+.slideout-img{
+
+    width: 20px;
+    height: 20px;
+}
 .slideout-container {
     background: #fff;
     position: fixed;

@@ -17,21 +17,21 @@
 
 // Required module list. Remove unnecessary modules, you can always get them back from the boilerplate.
 define([
-    'dojo/_base/declare', 
-	'mxui/widget/_WidgetBase', 
+    'dojo/_base/declare',
+	'mxui/widget/_WidgetBase',
 	'dijit/_TemplatedMixin',
-    'mxui/dom', 
-	'dojo/dom', 
-	'dojo/query', 
-	'dojo/dom-prop', 
-	'dojo/dom-geometry', 
-	'dojo/dom-class', 
-	'dojo/dom-style', 
-	'dojo/dom-construct', 
-	'dojo/_base/array', 
-	'dojo/_base/lang', 
-	'dojo/html', 
-	'dojo/_base/event', 
+    'mxui/dom',
+	'dojo/dom',
+	'dojo/query',
+	'dojo/dom-prop',
+	'dojo/dom-geometry',
+	'dojo/dom-class',
+	'dojo/dom-style',
+	'dojo/dom-construct',
+	'dojo/_base/array',
+	'dojo/_base/lang',
+	'dojo/html',
+	'dojo/_base/event',
 	'dojo/text!SlideOut/template/SlideOut.html',
 	'SlideOut/widget/SlideOut'
 ], function (declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, domQuery, domProp, domGeom, domClass, domStyle, domConstruct, dojoArray, dojoLang, html, event, widgetTemplate, Core) {
@@ -59,7 +59,6 @@ define([
         // dijit._WidgetBase.postCreate is called after constructing the widget. Implement to do extra setup work.
         postCreate: function () {
             logger.debug(this.id + ".postCreate");
-			
             this._updateRendering();
             this._setupEvents();
         },
@@ -70,7 +69,7 @@ define([
 
             this._contextObj = obj;
             this._resetSubscriptions();
-            this._updateRendering(callback); // We're passing the callback to updateRendering to be called after DOM-manipulation			
+            this._updateRendering(callback); // We're passing the callback to updateRendering to be called after DOM-manipulation
         },
 
         // mxui.widget._WidgetBase.enable is called when the widget should enable editing. Implement to enable editing if widget is input widget.
@@ -103,7 +102,7 @@ define([
             // The callback, coming from update, needs to be executed, to let the page know it finished rendering
             // mendix.lang.nullExec(callback);
         },
-		
+
 		_loadData: function (callback) {
             logger.debug(this.id + "._loadData");
             this.replaceattributes = [];
@@ -212,7 +211,7 @@ define([
                 return "";
             } else {
                 return returnvalue;
-            }	
+            }
         },
 
 
@@ -227,12 +226,12 @@ define([
                 settings = this.replaceattributes[attr];
                 str = str.split("${" + settings.variable + "}").join(settings.value);
             }
-            
+
 			console.log(this.id + "._buildString: " + str);
-            this.slidebutton.innerHTML = str;
+            this.slidetext.innerHTML = str;
 
 			this._setButtonTop();
-			
+
             if (callback && typeof callback === "function") {
                 logger.debug(this.id + "._renderString callback");
                 callback();
@@ -245,8 +244,8 @@ define([
                 string = dom.escapeString(string);
             }
             return string;
-        },       
-       			
+        },
+
 		_loadPage: function(){
 			if(this.contentSet) {
 				if(this.refreshMF && this._contextObj){
@@ -254,7 +253,7 @@ define([
 						console.log(this.id + " refresh done.");
 					}), this._contextObj);
 				}
-			} else {	
+			} else {
 				if(this._contextObj && this.pushCurrentObject) {
 					this._setPage(this._contextObj);
 		   		} else {
@@ -263,7 +262,7 @@ define([
 				this.contentSet = true;
 			}
 		},
-        
+
         _unsubscribe: function () {
 			console.log(this.id + "._unsubscribe");
           	if (this._handles) {
@@ -306,7 +305,7 @@ define([
                 this._handles = [ objectHandle, attrHandle, validationHandle ];
             }
         },
-        
+
         // Handle validations.
         _handleValidation: function (validations) {},
 

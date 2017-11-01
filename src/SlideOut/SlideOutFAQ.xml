@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <widget id="SlideOut.widget.SlideOutFAQ" needsEntityContext="false" xmlns="http://www.mendix.com/widget/1.0/">
     <name>SlideOut FAQ</name>
-    <description>Slide out widget to have the option of FAQ items about the current page.</description>        
+    <description>Slide out widget to have the option of FAQ items about the current page.</description>
 	<icon>iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAFMklEQVR4Xu3dsW8URxTH8TeLpaSDJg0S59xxHWWC0gYlUNCkiURDi/gDEPkHUqL8A6ROiwSJKAISUpoU1HTnW98hKio6kI4dtLbBZ/t2d2ZuZve9Nz+Xvtnx7Xw/vrVvR7YhfGS9Aibrs8fJU9YAptPpV7PZ7IM2Bz7nlS2A6Xh8w65Wfxpjbs6Wy1daEExHoyvW2qdmZ+fOrCz/7TqvLAEcxrePqaCvK7Jvz1l7TQOCOv5HY14UZL6hit6bHfNLF4LsAKzH//zdoQHBifjHJ9aJICsAm+JrQLAxviOCbAC0xZeMoDW+A4IsALjEl4jAKX4HAvUAfOJLQuAVvwWBagAh8SUgCIrfgEAtgG3ic0awVfwNCFQCiBGfI4Io8U8hUAcgZvx6rSqyq3PG/Drb33/c9a5aysejxj96oobsPVUAUsQ3RLfmi8WjlHG75k4Rn8j8trcoH6gBgPhdjNYfP4xff0YFAMQPi68CAOKHxxcPYDwaXy+sfVLf1fNZhqax9Q982q/5p89d7CUA8X3IH1/zVQBA/DjxRV4CED9efHEAED9ufFEAED9+fDEAED9NfBEAED9dfPYAED9tfNYAED99fLYAEL+f+CwBIH5/8dkBQPx+47MCgPj9x2cDAPGHic8CAOIPF39wAJPR5Gdjq79xP98FQfMtXZejm8YMth8A8X2ypYk/2CsA4vOIPwgAxOcTv3cAiM8rfq8AEJ9f/N4AID7P+L0AQHy+8ZMDQHze8ZMCQHz+8ZMBQHwZ8ZMAQHw58aMDQHxZ8aMCQHx58aMBQHyZ8aMAQHy58bcGgPiy428FYDIa/WRs8Q82c7ggSHc/3+Wrt40J2hCC+D7Lzjd+0CsA4uuJ7w0A8XXF9wKA+PriOwNAfJ3xnQAgvt74nQAQX3f8VgCIrz9+IwDEzyP+RgCIn0/8MwAQP6/4JwAgfn7xvwBA/DzjHwBA/HzjHwC4vPvtGyK66LMMbWMrQw/L/f27seYLnMdMdnf/N2R+CDz+zGHWVv/Nl8sficjGmpPDPObyaPQd2eI5FXQh2hOy5u7esnwYbb6Aicbj8a6p7AtDNA44fPMhlflj73V5XxOCg/0AQOBBRBmCLxtCgCBPBCd2BAFBfgjObAkDgrwQbNwTCAT5IGjcFAoEeSBo3RUMBPoRdG4LBwLdCDoB4H0CDwD1UGHvEzgBAAK9CJwBAIFOBF4AgEAfAm8AQKALQRAAINCDIBgAEOhAsBWAegkmlybfG6qeYT+BAwiGvyJuDQAIHMKvD2GGIAoAIJCLIBoAIJCJICoAIJCHIDoAIJCFIAkAIJCDIBkAIJCBICkAIOCPIDkAIOCNoBcAQMAXQW8AgIAngl4BAAE/BL0DAAJeCAYBAAR8EAwGAAh4IBgUwDGC1XMqivOeS9I8HH+fwHkpBwcABM6tDgdG3k/AAgAQDIeADQAgGAYBKwBA0D8CdgCAoF8ELAEAQX8I2AIAgn4QsAYABOkRsAcABGkRiAAABOkQiAEABGkQiAIABPERiAMABHERiAQABPEQiAUABHEQiAZwhOCqodUz7CdwALHhVrJ4AEDgEH59yCkEKgAAQTgCNQCAIAyBKgCpEFiyt+eLxV+eSxx1eJL/gUT2d3UAYiOwRKUtzLWyLBdRiwZMFhVBVb2ztHNdJYBYCDjF/+wlCoKj+PPX85dqAWyLgGP8KAjW4tfzqQYQioBz/K0QnIqfBQBfBBLiByHYED8bAK4IJMX3QtAQPysAXQgkxndC0BI/OwBNCCTHb0XQEb8+9hN4pQ3zPJXjJgAAAABJRU5ErkJggg==</icon>
 
     <properties>
-        
-        <property key="buttonString" type="translatableString" required="true">
+        <property key="buttonString" type="translatableString" required="false">
             <caption>Button text</caption>
             <category>Appearance</category>
             <description>The text of the button.</description>
         </property>
+		<property key="buttonClass" type="string" required="false">
+            <caption>Button CSS Class</caption>
+            <category>Appearance</category>
+            <description>CSS class for the button</description>
+        </property>
+        <property key="picture" type="image" required="false">
+			<caption>Picture</caption>
+			<category>Data Source</category>
+			<description>Select an image to add.</description>
+		</property>
         <property key="contentWidth" type="integer" required="true" defaultValue="300">
             <caption>Width of the content</caption>
             <category>Appearance</category>
@@ -31,7 +40,7 @@
             <category>Appearance</category>
             <description>The duration in milliseconds for the animation to happen.</description>
         </property>
-        
+
 		<property key="pageContent" type="form" required="true">
             <caption>Page</caption>
             <category>Data</category>
@@ -56,7 +65,6 @@
 			<description>When the property is filled, the microflow will be triggered when the slide is openend, but not the first time.</description>
 			<returnType type="Void"/>
 		</property>
-		
+
     </properties>
 </widget>
-

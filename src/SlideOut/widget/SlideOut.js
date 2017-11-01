@@ -68,15 +68,23 @@ _jQuery) {
                 prio: this.seqPriority,
                 sorting: this.seqPriority,
                 control: this.slidecontrol,
-                toppos: this.topPosition
+                toppos: this.topPosition,
+				domNode: this.domNode
             }
             window.slideoutstorage.push(this._params);
 
             $(this.slidecontainer).css({
-              'width': this.contentWidth + 'px',
-              'right': '-' + this.contentWidth + 'px'
+              'width': this.contentWidth + '%',
+              'right': '-' + this.contentWidth + '%'
             });
 
+			domClass.add(this.slidebutton, this.buttonClass);
+
+			if(this.picture) {
+				this.iconTag.src = this.picture;
+			} else {
+				this.iconTag.style = "display:none";
+			}
         },
 
         // Attach events to HTML dom elements
@@ -91,15 +99,14 @@ _jQuery) {
             if (this.contentDisplay) {
                 // hide content
                 logger.debug(this.id + '._toggleContent hide content: ' + this.contentWidth + " showtime: " + this.showTime);
-                $(this.slidecontrol).animate({right: '-=' + this.contentWidth + 'px'}, this.showTime, "swing");
-                $(this.slidecontainer).animate({right: '-' + this.contentWidth + 'px'}, this.showTime, "swing", function() {
+                $(this.slidecontrol).animate({right: '-=' + this.contentWidth + '%'}, this.showTime, "swing");
+                $(this.slidecontainer).animate({right: '-' + this.contentWidth + '%'}, this.showTime, "swing", function() {
                     self._toggleOtherButtons(true);
                     self._setStyleText(this.slidecontent, "display:none;");
                 });
 
-
+				$(this.domNode).removeClass("open");
                 this.contentDisplay = false;
-
                 $(window).off("click");
 
             } else {
@@ -107,11 +114,12 @@ _jQuery) {
                 self._setStyleText(self.slidecontent, "display:block;");
                 self._loadPage();
                 logger.debug(this.id + '._toggleContent show content ' + this.contentWidth + " showtime: " + this.showTime);
-                $(this.slidecontrol).animate({right: '+=' + this.contentWidth + 'px'}, this.showTime, "swing");
+                $(this.slidecontrol).animate({right: '+=' + this.contentWidth + '%'}, this.showTime, "swing");
                 $(this.slidecontainer).animate({right: '0px'}, this.showTime, "swing");
 
                 this._toggleOtherButtons(false);
 
+				$(this.domNode).addClass("open");
                 this.contentDisplay = true;
 
                 $(window).click(dojoLang.hitch(this, function(e) {
@@ -131,8 +139,10 @@ _jQuery) {
                     if (item.id !== this.id) {
                         if (visible) {
                             this._setStyleText(item.control, "z-index:10000; right: 0px; top: " + item.toppos + "px;");
-                        } else {
+							$(item.domNode).removeClass("open");
+						} else {
                             this._setStyleText(item.control, "z-index:9000; right: 0px; top: " + item.toppos + "px;");
+							$(item.domNode).addClass("open");
                         }
                     }
                 }

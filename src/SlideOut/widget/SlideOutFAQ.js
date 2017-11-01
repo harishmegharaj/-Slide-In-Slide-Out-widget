@@ -17,20 +17,20 @@
 
 // Required module list. Remove unnecessary modules, you can always get them back from the boilerplate.
 define([
-    'dojo/_base/declare', 
-	'mxui/widget/_WidgetBase', 
+    'dojo/_base/declare',
+	'mxui/widget/_WidgetBase',
 	'dijit/_TemplatedMixin',
-    'mxui/dom', 
-	'dojo/dom', 
-	'dojo/query', 
-	'dojo/dom-prop', 
-	'dojo/dom-geometry', 
-	'dojo/dom-class', 
-	'dojo/dom-style', 
-	'dojo/dom-construct', 
-	'dojo/_base/array', 
-	'dojo/_base/lang', 
-	'dojo/html', 
+    'mxui/dom',
+	'dojo/dom',
+	'dojo/query',
+	'dojo/dom-prop',
+	'dojo/dom-geometry',
+	'dojo/dom-class',
+	'dojo/dom-style',
+	'dojo/dom-construct',
+	'dojo/_base/array',
+	'dojo/_base/lang',
+	'dojo/html',
 	'dojo/_base/event',
 	'dojo/text!SlideOut/template/SlideOut.html',
 	'SlideOut/widget/SlideOut'
@@ -61,7 +61,6 @@ define([
         // dijit._WidgetBase.postCreate is called after constructing the widget. Implement to do extra setup work.
         postCreate: function () {
             console.log(this.id + ".postCreate");
-
             this._updateRendering();
             this._setupEvents();
         },
@@ -92,7 +91,7 @@ define([
 
         // We want to stop events on a mobile device
         _stopBubblingEventOnMobile: function (e) {
-            
+
             console.log(this.id + "._stopBubblingEventOnMobile");
             if (typeof document.ontouchstart !== "undefined") {
                 dojoEvent.stop(e);
@@ -102,14 +101,14 @@ define([
         // Rerender the interface.
         _updateRendering: function (callback) {
             console.log(this.id + "._updateRendering");
-            
-            this.slidebutton.innerHTML = this.buttonString;
+
+            this.slidetext.innerHTML = this.buttonString;
 			this.slidecontrol.style.top = ((this.slidecontrol.offsetWidth / 2) + this.topPosition) + "px";
-			
+
             // The callback, coming from update, needs to be executed, to let the page know it finished rendering
             mendix.lang.nullExec(callback);
         },
-		
+
 		_setCurrentPage: function(){
 			var formname = '';
 
@@ -133,20 +132,20 @@ define([
 					formname = mx.screen.buffer.getCurrentItem()._c.url;
 				} else if (this.userdata) {
 					formname = this.userdata.formName;
-				} 
-				this._pageObj.set(this.pageAttr,formname);	
+				}
+				this._pageObj.set(this.pageAttr,formname);
 				console.log(this.id + '._setCurrentPage page found: ' + formname);
 			} catch (e) {
 				console.log(this.id + '._setCurrentPage failed to load current page.' + e);
 			}
 		},
-		
+
 		_loadPage: function(){
 			if (!this._pageObj) {
 				var self = this;
-				mx.data.create({ 
+				mx.data.create({
 					entity: this.pageEntity,
-						callback:   function(object){  
+						callback:   function(object){
 							self._pageObj = object;
 							self._setCurrentPage();
 							if(!self.contentSet){
@@ -157,7 +156,7 @@ define([
 				});
 			} else {
 				this._setCurrentPage();
-				
+
 				if(!this.contentSet){
 					this._setPage(this._pageObj);
 					this.contentSet = true;
@@ -165,10 +164,10 @@ define([
 					this._executeMicroflow(this.refreshMF, dojoLang.hitch(this, function () {
 						console.log(this.id + " refresh done.");
 					}), this._pageObj);
-				} 
+				}
 			}
 		},
-        
+
         _unsubscribe: function () {
           if (this._handles) {
               dojoArray.forEach(this._handles, function (handle) {
@@ -180,7 +179,7 @@ define([
 
         // Reset subscriptions.
         _resetSubscriptions: function () {},
-        
+
         // Handle validations.
         _handleValidation: function (validations) {},
 
