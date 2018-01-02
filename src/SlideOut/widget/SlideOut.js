@@ -43,7 +43,7 @@ html,
 ready,
 _jQuery) {
 
-    "use strict";
+    //"use strict";
     var $ = _jQuery.noConflict(true);
 
     // Declare widget.
@@ -126,13 +126,13 @@ _jQuery) {
 				$(this.domNode).addClass("open");
                 this.contentDisplay = true;
 
-                $(window).click(dojoLang.hitch(this, function(e) {
+                /*$(window).click(dojoLang.hitch(this, function(e) {
                     var list = $(e.target).parents();
                     if ($.inArray(this.slidecontainer, list) === -1 && $.inArray(this.slidecontrol, list) === -1) {
                         console.log("Not a parent of the widget of the list: " + list.length + ", toggle content");
                         this._toggleContent();
                     }
-                }));
+                }));*/
             }
         },
 

@@ -35,7 +35,7 @@ define([
 	'dojo/text!SlideOut/template/SlideOut.html',
 	'SlideOut/widget/SlideOut'
 ], function (declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, domQuery, domProp, domGeom, domClass, domStyle, domConstruct, dojoArray, dojoLang, html, event, widgetTemplate, Core) {
-    'use strict';
+    //'use strict';
 
     //http://jsfiddle.net/yHPTv/577/
 
