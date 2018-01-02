@@ -29,3 +29,10 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+.slideout-header {
+	background-color: #aaaaaa;
+}
+.slideout-header-text {
+	font-size: 18px;
+}

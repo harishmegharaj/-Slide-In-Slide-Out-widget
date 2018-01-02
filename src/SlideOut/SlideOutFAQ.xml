@@ -15,9 +15,19 @@
             <category>Appearance</category>
             <description>CSS class for the button</description>
         </property>
+		<property key="headerButtonString" type="string" required="false">
+			<caption>Header label text</caption>
+			<category>Appearance</category>
+			<description>Label for the header</description>
+		</property>
+		<property key="headerButtonClass" type="string" required="false">
+			<caption>Header button CSS Class</caption>
+			<category>Appearance</category>
+			<description>CSS class for the header button</description>
+		</property>
         <property key="picture" type="image" required="false">
 			<caption>Picture</caption>
-			<category>Data Source</category>
+			<category>Appearance</category>
 			<description>Select an image to add.</description>
 		</property>
         <property key="contentWidth" type="integer" required="true" defaultValue="300">
@@ -30,6 +40,11 @@
             <category>Appearance</category>
             <description>What is the minimal amout of pixels from the top?</description>
         </property>
+		<property key="hideOthers" type="boolean" defaultValue="false">
+			<caption>Hide other trays when this one opens</caption>
+			<category>Appearance</category>
+			<description>If true, other trays will hide when this one is activated. Otherwise, other trays can stay open.</description>
+		</property>		
 		<property key="seqPriority" type="integer" required="true" defaultValue="1">
             <caption>Priority</caption>
             <category>Appearance</category>

@@ -79,6 +79,9 @@ _jQuery) {
             });
 
 			domClass.add(this.slidebutton, this.buttonClass);
+			domClass.add(this.headerslidebutton, this.headerButtonClass);
+			this.headerText.innerHTML = this.headerButtonString;
+
 
 			if(this.picture) {
 				this.iconTag.src = this.picture;
@@ -92,6 +95,7 @@ _jQuery) {
             logger.debug("Core." + this.id + "._setupEvents hide all content");
             logger.debug(this.id + "._setupEvents");
             this.connect(this.slidebutton, "click", this._toggleContent);
+			this.connect(this.headerslidebutton, "click", this._toggleContent);
         },
 
         _toggleContent: function() {
@@ -137,13 +141,18 @@ _jQuery) {
                 for (var j = 0; j < window.slideoutstorage.length; j++) {
                     var item = window.slideoutstorage[j];
                     if (item.id !== this.id) {
-                        if (visible) {
-                            this._setStyleText(item.control, "z-index:10000; right: 0px; top: " + item.toppos + "px;");
-							$(item.domNode).removeClass("open");
+						if (this.hideOthers) {
+							if (item.contentDisplay) { // the item is visible
+								item._toggleContent();
+							}
 						} else {
-                            this._setStyleText(item.control, "z-index:9000; right: 0px; top: " + item.toppos + "px;");
-							$(item.domNode).addClass("open");
-                        }
+							if (visible) {
+								this._setStyleText(item.control, "z-index:10000; right: 0px; top: " + item.toppos + "px;");
+							} else {
+								this._setStyleText(item.control, "z-index:9000; right: 0px; top: " + item.toppos + "px;");
+								$(item.domNode).addClass("open");
+							}
+						}
                     }
                 }
             }
