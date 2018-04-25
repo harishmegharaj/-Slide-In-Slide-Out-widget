@@ -211,8 +211,11 @@ _jQuery) {
                     console.log("Core." + this.id + "._setButtonTop for id " + item.id + " totaltop: " + totalTop + " button width: " + item.control.offsetWidth);
                 }
             } else {
-                var top = ((this.slidecontrol.offsetWidth / 2) + this.topPosition) + "px";
-                this.slidecontrol.style.top = top;
+                if(this.slidecontrol !== undefined) {
+                    var top = ((this.slidecontrol.offsetWidth / 2) + this.topPosition) + "px";
+                    this.slidecontrol.style.top = top;
+                }
+                
             }
         },
 

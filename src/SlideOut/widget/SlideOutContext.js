@@ -227,8 +227,10 @@ define([
                 str = str.split("${" + settings.variable + "}").join(settings.value);
             }
 
-			console.log(this.id + "._buildString: " + str);
-            this.slidetext.innerHTML = str;
+            console.log(this.id + "._buildString: " + str);
+            if(this.slidetext !== undefined) {
+                this.slidetext.innerHTML = str;
+            }
 
 			this._setButtonTop();
 
